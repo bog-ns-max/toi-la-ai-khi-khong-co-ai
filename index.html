@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>TÔI LÀ AI KHI KHÔNG CÓ A.I?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <form id="jotformClone" onsubmit="event.preventDefault(); submitForm();">
+                <!-- Vạch tiến trình -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <!-- PAGE 1: Mở đầu -->
+                <div class="page active" id="page1">
+                    <div class="banner-wrapper">
+                        <img src="ai_banner.png" alt="AI and Human Connection Banner" class="banner-image">
+                    </div>
+                    <div class="form-blocks">
+                        <div class="block-title">
+                            <h1>TÔI LÀ AI KHI KHÔNG CÓ A.I?</h1>
+                        </div>
+                        <div class="block-text">
+                            <p>Trong thời đại A.I bùng nổ hiện nay, chúng ta ngày càng quen với việc hỏi A.I, nhận câu trả lời từ A.I. Nhưng bạn có biết con người khác với A.I như thế nào không? Con người chúng ta vốn dĩ đã vô cùng đặc biệt, chúng ta có suy nghĩ, có tâm hồn, có cảm nhận, có khả năng ra quyết định và chịu trách nhiệm.</p>
+                        </div>
+                        
+                        <div class="question-group">
+                            <div class="question-title">Vậy điều chúng ta nhất định không thể thiếu để trở thành chủ nhân của thời đại ngày nay thay vì để bị A.I "xoá sổ" là gì? <span class="required">*</span></div>
+                            <textarea name="q1" required placeholder="Câu trả lời của bạn..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="button" class="btn primary" onclick="nextPage(1)">
+                            Tiếp tục <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 2: Sáng tạo -->
+                <div class="page" id="page2">
+                    <div class="form-blocks">
+                        <div class="section-badge">Phần 1</div>
+                        <h2 class="section-title">Khả năng suy nghĩ và sáng tạo</h2>
+
+                        <div class="question-group">
+                            <div class="question-title">Khi A.I đưa ra một câu trả lời, bạn thường tin ngay hay có xu hướng kiểm chứng? Vì sao? <span class="required">*</span></div>
+                            <textarea name="q2" required placeholder="Nhập câu trả lời..."></textarea>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Sếp giao cho bạn một nhiệm vụ quen thuộc (viết báo cáo, làm proposal...), và bạn biết rõ A.I có thể làm nhanh hơn bạn. Nếu không có giới hạn về thời gian, nguồn lực hay cách làm, bạn sẽ làm khác đi như thế nào? <span class="required">*</span></div>
+                            <div class="options">
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="A" required> 
+                                    <span>Mình vẫn sẽ dùng A.I để làm nhanh nhất có thể, sau đó chỉnh sửa lại cho ổn là được.</span>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="B"> 
+                                    <span>Mình sẽ nghĩ lại mục tiêu thật sự của task này, rồi thiết kế lại nội dung theo cách dễ hiểu và có giá trị hơn cho người đọc.</span>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="C"> 
+                                    <span>Mình sẽ làm khác hoàn toàn: biến báo cáo thành một format sáng tạo hơn (storytelling, visual, case thực tế...) để người đọc thực sự nhớ và dùng được.</span>
+                                </label>
+                                <label class="option-card other-option">
+                                    <input type="radio" name="q3" value="Other"> 
+                                    <span>Khác...</span>
+                                </label>
+                                <div class="other-input-container">
+                                    <input type="text" name="q3_other" class="other-input" placeholder="Vui lòng cho biết thêm...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn secondary" onclick="prevPage(2)">
+                            <i data-lucide="arrow-left"></i> Quay lại
+                        </button>
+                        <button type="button" class="btn primary" onclick="nextPage(2)">
+                            Tiếp tục <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 3: Thiếu sót -->
+                <div class="page" id="page3">
+                    <div class="form-blocks">
+                        <div class="section-badge">Phần 2</div>
+                        <h2 class="section-title">Dũng cảm tìm kiếm sự thiếu sót của bản thân</h2>
+                        <div class="block-text">
+                            <p>Đừng quá quen thuộc với sự hoàn hảo khi làm mọi thứ với AI mà hãy tìm sự thiếu sót của bản thân. Hãy mạnh dạn đối diện với chính mình và cho bản thân cơ hội bắt đầu học và làm mọi thứ từ những thiếu sót ấy. Thiếu sót không phải kết thúc mà là sự bắt đầu của mọi khả năng.</p>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Bạn hiểu như thế nào về điều này "Thiếu sót đồng nghĩa với tất cả mọi khả năng đều có thể xảy ra"? <span class="required">*</span></div>
+                            <textarea name="q4" required></textarea>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Khi bạn đã nỗ lực hết mình để làm việc nhưng kết quả vẫn không như mong đợi. Bạn thường có suy nghĩ và cách giải quyết như thế nào? <span class="required">*</span></div>
+                            <div class="options">
+                                <label class="option-card"><input type="radio" name="q5" value="A" required> <span>Tự trách bản thân vì sao không thể làm tốt hơn</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="B"> <span>Tiêu cực và nghĩ mình không thể làm được</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="C"> <span>Biết vấn đề của mình nhưng trì hoãn không thay đổi</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="D"> <span>Nhìn nhận lại điều thiếu sót của bản thân và thay đổi lần tiếp theo</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="E"> <span>Mọi thứ đều là cơ hội</span></label>
+                                <label class="option-card other-option">
+                                    <input type="radio" name="q5" value="Other"> 
+                                    <span>Khác...</span>
+                                </label>
+                                <div class="other-input-container">
+                                    <input type="text" name="q5_other" class="other-input" placeholder="Vui lòng chỉ định...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Bạn nghĩ điều thiếu sót cần thiết phải sửa lúc này của mình là gì? Vì sao? <span class="required">*</span></div>
+                            <textarea name="q6" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn secondary" onclick="prevPage(3)">
+                            <i data-lucide="arrow-left"></i> Quay lại
+                        </button>
+                        <button type="button" class="btn primary" onclick="nextPage(3)">
+                            Tiếp tục <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 4: Quyết định -->
+                <div class="page" id="page4">
+                    <div class="form-blocks">
+                        <div class="section-badge">Phần 3</div>
+                        <h2 class="section-title">Khả năng đưa ra quyết định</h2>
+
+                        <div class="question-group">
+                            <div class="question-title">Bạn đang đứng trước một quyết định quan trọng (chọn công việc, hướng đi, hoặc một cơ hội mới). Bạn đã tham khảo A.I và nhận được nhiều gợi ý hợp lý, nhưng các phương án lại khá khác nhau. <span class="required">*</span></div>
+                            <div class="options">
+                                <label class="option-card"><input type="radio" name="q7" value="A" required> <span>Mình sẽ chọn phương án mà A.I đánh giá là "tốt nhất" hoặc phổ biến nhất để giảm rủi ro</span></label>
+                                <label class="option-card"><input type="radio" name="q7" value="B"> <span>Mình sẽ cân nhắc các phương án A.I đưa ra, rồi chọn cái mình cảm thấy "ổn nhất" theo trực giác.</span></label>
+                                <label class="option-card"><input type="radio" name="q7" value="C"> <span>Mình sẽ tự quyết định mà không cần hỏi A.I</span></label>
+                                <label class="option-card other-option">
+                                    <input type="radio" name="q7" value="Other"> 
+                                    <span>Khác...</span>
+                                </label>
+                                <div class="other-input-container">
+                                    <input type="text" name="q7_other" class="other-input" placeholder="Nhập câu trả lời của bạn...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn secondary" onclick="prevPage(4)">
+                            <i data-lucide="arrow-left"></i> Quay lại
+                        </button>
+                        <button type="button" class="btn primary" onclick="nextPage(4)">
+                            Tiếp tục <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 5: MBTI -->
+                <div class="page" id="page5">
+                    <div class="form-blocks">
+                        <div class="section-badge">Bài test</div>
+                        <h2 class="section-title">TEST MBTI Mini</h2>
+
+                        <div class="question-group">
+                            <div class="question-title">Câu 1: Khi đang phân vân giữa nhiều lựa chọn và đã tham khảo A.I, bạn sẽ: <span class="required">*</span></div>
+                            <div class="options horizontal-options">
+                                <label class="option-card"><input type="radio" name="mbti1" value="A" required> <span>Muốn nói ra ngay với người khác để trao đổi và làm rõ suy nghĩ</span></label>
+                                <label class="option-card"><input type="radio" name="mbti1" value="B"> <span>Muốn giữ lại suy nghĩ trong đầu, tự nghiền ngẫm trước khi chia sẻ</span></label>
+                            </div>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Câu 2: Khi đọc một câu trả lời từ A.I, bạn chú ý điều gì hơn? <span class="required">*</span></div>
+                            <div class="options horizontal-options">
+                                <label class="option-card"><input type="radio" name="mbti2" value="A" required> <span>Những thông tin cụ thể, rõ ràng, có thể áp dụng ngay</span></label>
+                                <label class="option-card"><input type="radio" name="mbti2" value="B"> <span>Ý nghĩa, xu hướng hoặc bức tranh tổng thể phía sau</span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <div class="question-title">Câu 3: Khi A.I gợi ý một lựa chọn “hợp lý” nhưng có thể ảnh hưởng đến người khác, bạn sẽ: <span class="required">*</span></div>
+                            <div class="options horizontal-options">
+                                <label class="option-card"><input type="radio" name="mbti3" value="A" required> <span>Ưu tiên phương án logic, hiệu quả và kết quả công việc</span></label>
+                                <label class="option-card"><input type="radio" name="mbti3" value="B"> <span>Cân nhắc cảm xúc, tác động đến con người trước khi quyết định</span></label>
+                            </div>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Câu 4: Khi cần đưa ra quyết định dựa trên thông tin từ A.I, bạn sẽ: <span class="required">*</span></div>
+                            <div class="options horizontal-options">
+                                <label class="option-card"><input type="radio" name="mbti4" value="A" required> <span>Xác định rõ tiêu chí và quyết định sớm để triển khai</span></label>
+                                <label class="option-card"><input type="radio" name="mbti4" value="B"> <span>Giữ các phương án mở, luôn linh hoạt để điều chỉnh hợp lý</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn secondary" onclick="prevPage(5)">
+                            <i data-lucide="arrow-left"></i> Quay lại
+                        </button>
+                        <button type="button" class="btn primary" onclick="nextPage(5)">
+                            Tiếp tục <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 6: Info -->
+                <div class="page" id="page6">
+                    <div class="form-blocks">
+                        <h2 class="section-title">Thông tin đăng ký</h2>
+                        <div class="block-text p-highlight">
+                            Vui lòng điền thông tin cá nhân nếu bạn muốn tiếp tục đồng hành cùng hành trình với <strong>TÔI LÀ AI KHI KHÔNG CÓ A.I?</strong>. Chương trình sẽ lựa chọn và có quà tặng hỗ trợ tư vấn với Mentor phân tích con đường tiềm năng của bản thân trong thời đại số.
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="question-group">
+                                <div class="question-title">Họ tên <span class="required">*</span></div>
+                                <input type="text" name="hoten" required>
+                            </div>
+
+                            <div class="question-group">
+                                <div class="question-title">Năm sinh <span class="required">*</span></div>
+                                <input type="text" name="namsinh" placeholder="YYYY" pattern="[0-9]{4}" required>
+                            </div>
+
+                            <div class="question-group">
+                                <div class="question-title">Số điện thoại <span class="required">*</span></div>
+                                <input type="tel" name="sdt" required>
+                            </div>
+
+                            <div class="question-group">
+                                <div class="question-title">Nơi sinh sống <span class="required">*</span></div>
+                                <input type="text" name="noisinhsong" required>
+                            </div>
+                        </div>
+
+                        <div class="question-group">
+                            <div class="question-title">Link Facebook / Zalo <span class="required">*</span></div>
+                            <input type="url" name="link_social" placeholder="https://" required>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn secondary" onclick="prevPage(6)">
+                            <i data-lucide="arrow-left"></i> Quay lại
+                        </button>
+                        <button type="submit" class="btn primary submit-btn">
+                            Gửi Phiếu Điền <i data-lucide="check"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAGE 7: THANK YOU -->
+                <div class="page" id="page7">
+                    <div class="form-blocks text-center" style="margin-top: 50px;">
+                        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h1 class="block-title mt-4">Chân thành cảm ơn!</h1>
+                        <div class="block-text">
+                            <p>Phản hồi của bạn đã được ghi lại một cách an toàn.</p>
+                            <p>Chúng tôi sẽ sớm liên hệ với bạn nếu câu trả lời của bạn phù hợp với chương trình.</p>
+                        </div>
+                        <button type="button" class="btn secondary mt-4" style="border: 1px solid var(--border);" onclick="location.reload()">Gửi lại biểu mẫu</button>
+                    </div>
+                </div>
+
+            </form>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
