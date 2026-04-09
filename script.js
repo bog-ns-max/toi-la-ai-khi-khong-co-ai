@@ -89,6 +89,7 @@ function submitForm() {
         if (GOOGLE_SCRIPT_URL) {
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
+                mode: 'no-cors',
                 body: formData
             })
                 .then(() => {
