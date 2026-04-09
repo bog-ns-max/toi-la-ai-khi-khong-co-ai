@@ -1,7 +1,7 @@
 const totalPages = 6; // Total pages before submit
 
 // Bạn có thể dán link Google Apps Script vào đây để hứng dữ liệu
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzWgXX6uxRKnN2uqnsrtbphV32haHadwW4iNbpezDu13UOCCDf4RH4KMRYn0VdSvtUwrg/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4OdQlSfJlBGAB-Xiu5wu8K0DMfl6U3DbjHOOIPw_dKdU1wxqYoXP9WOzblMlHC9dq8Q/exec';
 
 function updateProgress(pageIndex) {
     // page 7 is thank you, progress is 100 on page 6 itself before submit or transition to page 7
